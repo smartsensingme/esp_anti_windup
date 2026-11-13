@@ -1,10 +1,10 @@
-menu "Portable anti-windup"
-config ANTI_WINDUP_IRAM
-    bool "Place periodic anti-windup calculation in IRAM"
+menu "Shared PID/PR anti-windup"
+config ESP_ANTI_WINDUP_IRAM
+    bool "Place update and reset in IRAM"
     default y
     help
-        Places only anti_windup_compute in instruction RAM, consuming internal
-        instruction memory. Initialization remains in flash. The caller, data,
-        stack and full call graph still need auditing for cache-off execution;
-        this option does not guarantee timing or scheduler availability.
+        Consumes internal instruction RAM to keep coordinator update/reset out
+        of flash. Initialization stays in flash. Controllers, models, stack and
+        compiler helpers need a separate audit. Does not guarantee deadlines or
+        complete cache-off execution. No logging/allocation in the loop.
 endmenu

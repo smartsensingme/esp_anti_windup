@@ -1,5 +1,11 @@
-version: "0.1.0"
-description: "Portable C shared-actuator anti-windup calculation"
+version: "0.2.0"
+description: "Bounded shared-actuator coordinator for external-tracking PID/PR"
 license: "MIT"
 dependencies:
   idf: ">=6.0"
+  esp_pid:
+    git: https://github.com/smartsensingme/esp_pid.git
+    version: 6f0e5092a8a86089511c4040ce7396d34c43cef6
+  esp_pr:
+    git: https://github.com/smartsensingme/esp_pr.git
+    version: 107f4ce1235d4288ef7a1481a50dd1f30e7a081f
