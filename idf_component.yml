@@ -1,0 +1,5 @@
+version: "0.1.0"
+description: "Portable C shared-actuator anti-windup calculation"
+license: "MIT"
+dependencies:
+  idf: ">=6.0"

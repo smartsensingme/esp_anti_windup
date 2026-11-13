@@ -1,0 +1,10 @@
+menu "Portable anti-windup"
+config ANTI_WINDUP_IRAM
+    bool "Place periodic anti-windup calculation in IRAM"
+    default y
+    help
+        Places only anti_windup_compute in instruction RAM, consuming internal
+        instruction memory. Initialization remains in flash. The caller, data,
+        stack and full call graph still need auditing for cache-off execution;
+        this option does not guarantee timing or scheduler availability.
+endmenu
